@@ -50,7 +50,7 @@ function updateDisplay(event) {
 
     if (!isEqualsPressed) {
         if (type === "number") {
-            userInput.textContent += keyValue;
+            if (userInput.textContent.length < 26) userInput.textContent += keyValue;
         }
         else if (type === "operator") {
             operatorInput.textContent = keyValue;
@@ -78,7 +78,7 @@ function updateDisplay(event) {
     }
     else {
         if (type === "number") {
-            userInput.textContent += keyValue;
+            if (userInput.textContent.length < 26) userInput.textContent += keyValue;
         }
         else if (type === "operator") {
             operatorInput.textContent = keyValue;
