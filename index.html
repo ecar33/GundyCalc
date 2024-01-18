@@ -8,47 +8,61 @@
     <meta name="description" content="The Odin Project Calculator Challenge">
     <meta name="keywords" content="HTML, Javascript, CSS, responsive design, calculator, The Odin Project">
     <title>GundyCalc</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="./Style/style.css">
+    <script src="./Script/script.js" defer></script>
 </head>
 
 <body>
     <div class="main-content-container">
         <div class="calculator">
-            <div class="display">
+            <div class="top-bar">
+                <div class="calc-logo">GundyCalc</div>
                 <div class="calc-display">
-                    <output class="user-input" type="text" id="user-input">0</output>
+                    <div class="user-input-container">
+                        <output class="operator-input" type="text" id="operator-input"></output>
+                        <output class="user-input" type="text" id="user-input">&nbsp;</output>
+                    </div>
                     <output class="result" type="text" id="result">&nbsp;</output>
                 </div>
             </div>
-            <div class="button-row">
-                <button class="allclear" id="allclear" data-type="number">AC</button>
-                <button class="clear" id="clear" data-type="number">C</button>
-                <button class="operators" id="remainder" data-type="operator" value='%'>%</button>
-                <button class="operators" id="divide" data-type="operator" value='/'>÷</button>
-            </div>
-            <div class="button-row">
-                <button class="digits" id="digit-7" data-type="number" value='7'>7</button>
-                <button class="digits" id="digit-8" data-type="number" value='8'>8</button>
-                <button class="digits" id="digit-9" data-type="number" value='9'>9</button>
-                <button class="operators" value='+'>+</button>
-            </div>
-            <div class="button-row">
-                <button class="digits" id="digit-4" data-type="number" value='4'>4</button>
-                <button class="digits" id="digit-5" data-type="number" value='5'>5</button>
-                <button class="digits" id="digit-6" data-type="number" value='6'>6</button>
-                <button class="operators" data-type="number" value='-'>-</button>
-            </div>
-            <div class="button-row">
-                <button class="digits" id="digit-1" data-type="number" value='1'>1</button>
-                <button class="digits" id="digit-2" data-type="number" value='2'>2</button>
-                <button class="digits" id="digit-3" data-type="number" value='3'>3</button>
-                <button class="operators" data-type="operator" value='*'>×</button>
-            </div>
-            <div class="button-row">
-                <button class="digits" id="digit-0" data-type="number" value='0'>0</button>
-                <button class="operators" id=decimal data-type="decimal" value='.'>.</button>
-                <button class="operators" id="equal" data-type="equal" value='='>=</button>
+            <div class="calc-buttons-container">
+                <div id="memory-row" class="button-row">
+                    <button class="operators center-button orange-bg-button " id="memory-store" data-type="memory-store"
+                        value="MS">MS</button>
+                    <button class="operators center-button orange-bg-button " id="memory-recall" data-type="memory-recall"
+                        value="MR">MR</button>
+                    <button class="operators center-button orange-bg-button " id="memory-clear" data-type="memory-clear"
+                        value='MC'>MC</button>
+                </div>
+                <div class="button-row">
+                    <button class="allclear" id="allclear" data-type="reset">AC</button>
+                    <button class="clear" id="clear" data-type="backspace">C</button>
+                    <button class="operators" id="remainder" data-type="operator" value='%'>%</button>
+                    <button class="operators" id="divide" data-type="operator" value='/'>÷</button>
+                </div>
+                <div class="button-row">
+                    <button class="digits" id="digit-7" data-type="number" value='7'>7</button>
+                    <button class="digits" id="digit-8" data-type="number" value='8'>8</button>
+                    <button class="digits" id="digit-9" data-type="number" value='9'>9</button>
+                    <button class="operators" id="add" data-type="operator" value='+'>+</button>
+                </div>
+                <div class="button-row">
+                    <button class="digits" id="digit-4" data-type="number" value='4'>4</button>
+                    <button class="digits" id="digit-5" data-type="number" value='5'>5</button>
+                    <button class="digits" id="digit-6" data-type="number" value='6'>6</button>
+                    <button class="operators" data-type="operator" value='-'>-</button>
+                </div>
+                <div class="button-row">
+                    <button class="digits" id="digit-1" data-type="number" value='1'>1</button>
+                    <button class="digits" id="digit-2" data-type="number" value='2'>2</button>
+                    <button class="digits" id="digit-3" data-type="number" value='3'>3</button>
+                    <button class="operators" id="multiply" data-type="operator" value='*'>*</button>
+                </div>
+                <div id="bottom-row" class="button-row">
+                    <button class="digits" id="digit-0" data-type="number" value='0'>0</button>
+                    <button class="operators" id=decimal data-type="decimal" value='.'>.</button>
+                    <button class="operators orange-bg-button " id="equal" data-type="equal" value='='>=</button>
+                </div>
             </div>
         </div>
 
