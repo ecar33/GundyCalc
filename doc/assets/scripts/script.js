@@ -3,9 +3,10 @@ const userInput = document.querySelector('.user-input')
 const result = document.querySelector('.result')
 const operatorInput = document.querySelector('.operator-input')
 const allClearKey = document.querySelector('.allclear')
-const clearKey = document.querySelector('.clear');
+const clearKey = document.querySelector('.clear')
 let previousUserInput = '';
 let isEqualsPressed = false;
+let isDecimalPressed = false;
 const memoryRecallKey = document.querySelector('#memory-recall')
 const memoryStoreKey = document.querySelector('#memory-store')
 const memoryClearKey = document.querySelector('#memory-clear')
@@ -60,6 +61,12 @@ function updateDisplay(event) {
             result.textContent = roundToTwoDecimalPlaces(compute(Number(previousUserInput), Number(userInput.textContent), operatorInput.textContent));
             isEqualsPressed = true;
         }
+        else if (type === "decimal") {
+            if (!isDecimalPressed) {
+                userInput.textContent += keyValue;
+                isDecimalPressed = true;
+            }
+        }
     }
 }
 
@@ -101,6 +108,7 @@ function reset() {
     result.textContent = '\xa0';
     previousUserInput = '';
     isEqualsPressed = false;
+    isDecimalPressed = false;
 
 }
 
