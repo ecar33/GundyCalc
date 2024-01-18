@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Digital-7';
-    src: url('../Fonts/Digital-7.woff2') format('woff2'),
-        url('../Fonts/Digital-7.woff') format('woff');
+    src: url('Digital-7.woff2') format('woff2'),
+        url('/Digital-7.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -29,7 +29,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('/Images/dark-bg.jpg');
+    background-image: url('../images/dark-bg.jpg');
     background-size: cover;
 }
 
