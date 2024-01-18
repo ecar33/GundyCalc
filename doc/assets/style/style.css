@@ -1,14 +1,16 @@
 @font-face {
-    font-family: 'Digital-7';
-    src: url('Digital-7.woff2') format('woff2'),
-        url('/Digital-7.woff') format('woff');
+    font-family: 'Eurostile';
+    src: url('../fonts/EurostileRegular.woff2') format('woff2'),
+        url('../fonts/EurostileRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+}
 
-    font-family: 'Eurostile';
-    src: url('../Fonts/EurostileRegular.woff2') format('woff2'),
-        url('../Fonts/EurostileRegular.woff') format('woff');
+@font-face {
+    font-family: 'DS-Digital';
+    src: url('../fonts/DS-Digital.woff2') format('woff2'),
+        url('../fonts/DS-Digital.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -31,6 +33,7 @@ body {
     flex-direction: column;
     background-image: url('../images/dark-bg.jpg');
     background-size: cover;
+    gap: 10%;;
 }
 
 .main-content-container {
@@ -96,7 +99,7 @@ body {
 .operator-input {
     font-size: 1.35rem;
     flex-shrink: 1;
-    font-family: 'Digital-7';
+    font-family: 'DS-Digital';
     color: rgba(0, 0, 0, 0.719);
     margin-right: auto;
 }
@@ -105,7 +108,7 @@ body {
     display: flex;
     margin-left: auto;
     font-size: 1.45rem;
-    font-family: 'Digital-7';
+    font-family: 'DS-Digital';
     justify-content: flex-end;
     color: rgba(0, 0, 0, 0.705);
 }
@@ -114,7 +117,7 @@ body {
 .result {
     font-size: 1.8rem;
     height: 50%;
-    font-family: 'Digital-7';
+    font-family: 'DS-Digital';
     color: black;
     display: flex;
     justify-content: flex-end;
@@ -169,12 +172,11 @@ button {
     justify-content: center;
     align-items: flex-start;
     height: 5%;
-    margin-top: 5%;
 }
 
 .footer {
     color: white;
-    font-family: 'Eurostile';
+    font-family: "Eurostile";
 }
 
 p {
