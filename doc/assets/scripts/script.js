@@ -55,16 +55,45 @@ function updateDisplay(event) {
         else if (type === "operator") {
             operatorInput.textContent = keyValue;
             previousUserInput = userInput.textContent;
-            userInput.textContent = '';
+            userInput.textContent = '\xa0';
         }
         else if (type === "equal") {
-            result.textContent = roundToTwoDecimalPlaces(compute(Number(previousUserInput), Number(userInput.textContent), operatorInput.textContent));
-            isEqualsPressed = true;
+            if (operatorInput.textContent === '' || userInput.textContent === '\xa0') {
+                return
+            }
+            else {
+                result.textContent = roundToTwoDecimalPlaces(compute(Number(previousUserInput), Number(userInput.textContent), operatorInput.textContent));
+                userInput.textContent = '\xa0'
+                isEqualsPressed = true
+                isDecimalPressed = false
+            }
+
         }
         else if (type === "decimal") {
             if (!isDecimalPressed) {
                 userInput.textContent += keyValue;
                 isDecimalPressed = true;
+            }
+        }
+    }
+    else {
+        if (type === "number") {
+            userInput.textContent += keyValue;
+        }
+        else if (type === "operator") {
+            operatorInput.textContent = keyValue;
+            userInput.textContent = '\xa0'
+        }
+        else if (type === "equal") {
+            result.textContent = roundToTwoDecimalPlaces(compute(Number(result.textContent), Number(userInput.textContent), operatorInput.textContent));
+            userInput.textContent = '\xa0'
+            isEqualsPressed = true;
+            isDecimalPressed = false
+        }
+        else if (type === "decimal") {
+            if (!isDecimalPressed) {
+                userInput.textContent += keyValue;
+                isDecimalPressed = true
             }
         }
     }
@@ -99,6 +128,8 @@ function compute(x, y, operator) {
             return x - y
         case '*':
             return x * y
+        case '%':
+            return x % y
     }
 }
 
